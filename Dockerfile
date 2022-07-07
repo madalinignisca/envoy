@@ -1,6 +1,5 @@
 FROM composer
 
-RUN apt-get update -y \
-  && apt-get install openssh-client -y \
+RUN apk add --no-cache openssh \
   && composer global require laravel/envoy \
   && ln -s /tmp/vendor/bin/envoy /usr/local/bin/envoy
